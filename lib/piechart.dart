@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'dto.dart';
 import 'util.dart';
 
-class PieOutsideLabelChart extends StatelessWidget {
+class PieInsideLabelChart extends StatelessWidget {
   final Future<List<LinearExpenses>> expenses;
   static const platform =
       const MethodChannel('com.example.flutter.dart/flutter_chart');
 
-  PieOutsideLabelChart(this.expenses);
+  PieInsideLabelChart(this.expenses);
 
   @override
   Widget build(BuildContext context) {

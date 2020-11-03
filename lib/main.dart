@@ -71,19 +71,6 @@ class _MyHomePageState extends State<MyHomePage> {
         ));
   }
 
-  Widget _createMyChart(ChartType chartType) {
-    switch (chartType) {
-      case ChartType.PIE:
-        return new PieOutsideLabelChart(_getAsyncData());
-        break;
-      case ChartType.BAR:
-        return new StackedBarChart(_getAsyncData());
-        break;
-      default:
-        return new PieOutsideLabelChart(_getAsyncData());
-    }
-  }
-
   Widget _createDropDown(BuildContext context) {
     return DropdownButton<ChartType>(
         value: dropdownValue,
@@ -106,4 +93,18 @@ class _MyHomePageState extends State<MyHomePage> {
               child: Text(classType.toString().split("\.").last));
         }).toList());
   }
+
+  Widget _createMyChart(ChartType chartType) {
+    switch (chartType) {
+      case ChartType.PIE:
+        return new PieInsideLabelChart(_getAsyncData());
+        break;
+      case ChartType.BAR:
+        return new SimpleBarChart(_getAsyncData());
+        break;
+      default:
+        return new PieInsideLabelChart(_getAsyncData());
+    }
+  }
+
 }
