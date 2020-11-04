@@ -51,19 +51,18 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Chart selector'),
+          title: Text('Chart Selector'),
         ),
         body: Container(
           child: new Column(
             children: [
               new Container(
                 height: 100.0,
-                width: 200.0,
                 alignment: Alignment.center,
                 child: _createDropDown(context),
               ),
               new Container(
-                  height: 200.0,
+                  height: 300.0,
                   alignment: Alignment.center,
                   child: _createMyChart(dropdownValue)),
             ],
@@ -97,14 +96,13 @@ class _MyHomePageState extends State<MyHomePage> {
   Widget _createMyChart(ChartType chartType) {
     switch (chartType) {
       case ChartType.PIE:
-        return new PieInsideLabelChart(_getAsyncData());
+        return new PieChart(_getAsyncData());
         break;
       case ChartType.BAR:
         return new SimpleBarChart(_getAsyncData());
         break;
       default:
-        return new PieInsideLabelChart(_getAsyncData());
+        return new PieChart(_getAsyncData());
     }
   }
-
 }

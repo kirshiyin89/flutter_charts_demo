@@ -9,7 +9,7 @@ List<charts.Series> preparePieChart(List<LinearExpenses> data) {
         measureFn: (LinearExpenses expenses, _) => expenses.expense,
         data: data,
         labelAccessorFn: (LinearExpenses row, _) =>
-            '${row.year}: ${row.expense}')
+            '${row.year}\n ${row.expense}')
   ];
 }
 

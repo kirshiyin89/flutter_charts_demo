@@ -5,12 +5,12 @@ import 'package:flutter/services.dart';
 import 'dto.dart';
 import 'util.dart';
 
-class PieInsideLabelChart extends StatelessWidget {
+class PieChart extends StatelessWidget {
   final Future<List<LinearExpenses>> expenses;
   static const platform =
       const MethodChannel('com.example.flutter.dart/flutter_chart');
 
-  PieInsideLabelChart(this.expenses);
+  PieChart(this.expenses);
 
   @override
   Widget build(BuildContext context) {
@@ -21,10 +21,9 @@ class PieInsideLabelChart extends StatelessWidget {
             return charts.PieChart(preparePieChart(snapshot.data),
                 animate: true,
                 defaultRenderer: new charts.ArcRendererConfig(
-                    arcRendererDecorators: [
-                      new charts.ArcLabelDecorator(
-                          labelPosition: charts.ArcLabelPosition.inside)
-                    ]));
+                  arcWidth: 60,
+                  arcRendererDecorators: [new charts.ArcLabelDecorator()],
+                ));
           } else {
             return new Container();
           }
