@@ -1,6 +1,7 @@
 # How to integrate charts_flutter into your Android application.
 
 This project is a demo for my technical article on Medium: 
+https://medium.com/better-programming/how-to-create-flutter-charts-on-android-5a75b5fc337c
 
 
 ## How to start this project:
